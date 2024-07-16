@@ -1,0 +1,55 @@
+/* src/Loading.css */
+
+.loading-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Set height to 70vh */
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #EBB434; /* Change spinner color to #EBB434 */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading-widget p {
+    margin-top: 20px;
+    font-size: 1.
+  }
+
+  .IngredientsList{
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .ingredientListItem{
+    background-color: white;
+    color: #282c34;
+    margin: 12px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid grey;
+  }
+
+  .deleteIngredientButton{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid grey;
+    color: grey;
+    border-radius: 5px;
+    font-size: 16px;
+  }
