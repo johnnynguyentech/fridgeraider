@@ -99,7 +99,10 @@ function InputForm() {
     };
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', height: '78vh' }} className="InputForm">
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: {
+            xs: '70vh', // mobile
+            md: '80vh'  // desktop
+          } }} className="InputForm">
             <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', padding: '20px' }}>
                 <ul className="IngredientsList">
                     {ingredientItems}
