@@ -36,20 +36,52 @@
 
   .ingredientListItem{
     background-color: white;
-    color: #282c34;
-    margin: 12px 0;
-    border-radius: 5px;
+    color: #242423;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    border: 1px solid grey;
+    padding: 2px 10px;
   }
+
+  
+.deleteIngredientButton {
+    flex-shrink: 0;
+    margin-left: 5px;
+}
 
   .deleteIngredientButton{
     cursor: pointer;
-    background-color: white;
-    border: 1px solid grey;
-    color: grey;
-    border-radius: 5px;
+    color: #242423;
     font-size: 16px;
+    border: none;
+    background-color: white;
   }
+
+  .IngredientItems{
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 10px 20px;
+  }
+  
+  .kalam-bold {
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .RecipeContainer{
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: #242423;
+  }
+
+  /* .rubik-dirt-regular {
+    font-family: "Rubik Dirt", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin: 0;
+    color: white;
+  } */

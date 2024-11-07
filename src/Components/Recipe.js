@@ -20,14 +20,26 @@ function Recipe() {
             md: '80vh'  // desktop
           } }} className="InputForm">
             <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '20px' }}>
-                <div style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: finalRecipe }} />
+                <h3 className='kalam-bold' style={{textDecoration: "underline", marginBottom: "0"}}>THE ULTIMATE DISH</h3>
+                <div className="kalam-bold" dangerouslySetInnerHTML={{ __html: finalRecipe }} />
             </div>
             <div className="RestartContainer" style={{ borderTop: '1px solid #ddd' }}>
                 <Button
                     fullWidth
                     variant="contained"
                     size="large"
-                    sx={{ color: 'secondary.main', height: '56px', fontSize: '26px', fontWeight: '600', mt: 2 }}
+                    sx={{
+                        color: 'secondary.main',
+                        backgroundColor: '#2e2e2e',
+                        border: '1px solid white',
+                        height: '56px',
+                        fontSize: '22px',
+                        fontWeight: '700',
+                        mt: 2,
+                        '&:hover': {
+                            backgroundColor: '#3d3d3d',
+                        }
+                    }}
                     onClick={handleStartOver}
                 >
                     Start Over

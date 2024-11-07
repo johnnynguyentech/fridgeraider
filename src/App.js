@@ -25,7 +25,7 @@ function Content() {
   return (
     <Container maxWidth="sm" style={{ flex: 1, marginTop: "24px" }}>
       <div className="HeadingContainer">
-        <Typography variant="h3" sx={{ color: "primary.main", fontWeight: "600" }}>FridgeRaider</Typography>
+        <h1 className='rubik-dirt-regular'>FridgeRaider</h1>
         <Typography variant="body1" sx={{ color: "primary.main" }}>Tell us what's in your fridge. We'll come up with the recipe.</Typography>
       </div>
       {pageContent}

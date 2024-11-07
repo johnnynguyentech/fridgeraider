@@ -39,14 +39,19 @@ function InputComponent() {
     >
       <TextField 
         fullWidth 
+        autoComplete="off"
         label="List an ingredient" 
         id="fullWidth" 
         sx={{ 
           bgcolor: 'white',
+          border: '1px solid white',
           borderRadius: '4px 0 0 4px',
           '& fieldset': { borderRight: 'none' }, 
-          height: '56px',
-          flexGrow: 1 // Take up remaining space
+          height: '54px',
+          flexGrow: 1,
+          '& .MuiInputBase-root': {
+            height: '54px', // Make the input area match the height
+          }
         }} 
         value={inputValue} 
         onChange={handleInputChange} 
@@ -58,9 +63,14 @@ function InputComponent() {
         onClick={handleAddClick}
         sx={{ 
           color: 'secondary.main', 
+          backgroundColor: '#2e2e2e',
+          border: '1px solid white',
           borderRadius: '0 4px 4px 0', 
           height: '56px', 
-          fontWeight: '600' 
+          fontWeight: '600',
+          '&:hover': {
+            backgroundColor: '#3d3d3d',
+        }
         }}
       >
         Add
