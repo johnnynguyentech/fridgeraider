@@ -60,7 +60,7 @@
     background-color: white;
     border-radius: 5px;
     margin: 20px 0;
-    padding: 10px 20px;
+    padding: 20px;
   }
   
   .kalam-bold {
@@ -73,6 +73,15 @@
     background-color: white;
     border-radius: 5px;
     margin: 20px 0;
-    padding: 10px 20px;
+    padding: 20px;
     color: #454444;
+  }
+
+  @media (max-width: 768px) {
+    .IngredientItems{
+      padding: 10px;
+    }
+    .RecipeContainer{
+      padding: 10px;
+    }
   }

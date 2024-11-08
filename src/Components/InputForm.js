@@ -105,7 +105,7 @@ function InputForm() {
             md: '80vh'  // desktop
           } }} className="InputForm">
             <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto' }}>
-                <h3 className='kalam-bold' style={{textDecoration: "underline", marginBottom: "0", color:"#454444"}}>INGREDIENTS</h3>
+                <h3 className='kalam-bold' style={{textDecoration: "underline", margin: "0", color:"#454444"}}>INGREDIENTS</h3>
                 <ul className="IngredientsList kalam-bold">
                     {ingredientItems}
                 </ul>

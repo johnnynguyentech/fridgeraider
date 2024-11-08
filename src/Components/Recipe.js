@@ -20,7 +20,7 @@ function Recipe() {
             md: '80vh'  // desktop
           } }} className="InputForm">
             <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '20px' }}>
-                <h3 className='kalam-bold' style={{textDecoration: "underline", marginBottom: "0", color: "#454444"}}>THE ULTIMATE DISH</h3>
+                <h3 className='kalam-bold' style={{textDecoration: "underline", margin: "0", color: "#454444"}}>THE ULTIMATE DISH</h3>
                 <div className="kalam-bold" dangerouslySetInnerHTML={{ __html: finalRecipe }} />
             </div>
             <div className="RestartContainer" style={{ borderTop: '1px solid #ddd' }}>
