@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../Contexts/AuthContext";
 import { db } from "../Contexts/Firestore";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import { useFinalRecipe } from "../Contexts/FinalRecipe";
 import { useRecipeStatus } from "../Contexts/RecipeStatus";
 
@@ -14,19 +14,23 @@ function Menu() {
     const [savedRecipes, setSavedRecipes] = useState([]);
 
     useEffect(() => {
-        const fetchSavedRecipes = async () => {
-            if (!user) return;
+        // Only set up Firestore listener if the user is logged in
+        let unsubscribe = () => {}; // Default to empty function for cleanup
 
+        if (user) {
             const userRef = doc(db, "users", user.uid);
-            const docSnap = await getDoc(userRef);
+            unsubscribe = onSnapshot(userRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    setSavedRecipes(docSnap.data().recipes || []);
+                }
+            });
+        }
 
-            if (docSnap.exists()) {
-                setSavedRecipes(docSnap.data().recipes || []);
-            }
+        // Cleanup Firestore listener on unmount or when user logs out
+        return () => {
+            unsubscribe(); // Unsubscribing from Firestore listener if necessary
         };
-
-        fetchSavedRecipes();
-    }, [user]); // Reload recipes when user logs in/out
+    }, [user]); // Run the effect when the user changes
 
     const handleRecipeClick = (recipe) => {
         setFinalRecipe(recipe.recipe); // Make sure you're passing the recipe content (steps, etc.)
@@ -38,22 +42,25 @@ function Menu() {
         <div className="Menu">
             {user && (
                 <div className="dropdown">
-                    <button className="dropdown-toggle" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                    <button 
+                        className="dropdown-toggle" 
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    >
                         Saved Recipes ▼
                     </button>
-                    {isDropdownOpen && (
-                        <ul className="dropdown-menu">
-                            {savedRecipes.length > 0 ? (
-                                savedRecipes.map((recipe) => (
-                                    <li key={recipe.recipeId} onClick={() => handleRecipeClick(recipe)}>
-                                        {recipe.title}
-                                    </li>
-                                ))
-                            ) : (
-                                <li>No saved recipes</li>
-                            )}
-                        </ul>
-                    )}
+                    <ul 
+                        className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
+                    >
+                        {savedRecipes.length > 0 ? (
+                            savedRecipes.map((recipe) => (
+                                <li key={recipe.recipeId} onClick={() => handleRecipeClick(recipe)}>
+                                    {recipe.title.length > 30 ? `${recipe.title.slice(0, 30)}...` : recipe.title}
+                                </li>
+                            ))
+                        ) : (
+                            <li>No saved recipes</li>
+                        )}
+                    </ul>
                 </div>
             )}
             <button className="SignInButton" onClick={user ? signOutUser : signInWithGoogle}>

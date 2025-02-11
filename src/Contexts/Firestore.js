@@ -13,7 +13,7 @@ const extractTitle = (recipeHtml) => {
         let title = match[1].trim();
 
         const adjectives = [
-            "a", "an", "the", "delectable", "delicious", "delightful","dish called", "mouthwatering", "mouth-watering", "tasty", "amazing", "scrumptious",
+            "a", "an", "the", "delectable", "delicious", "delightful","dish called","dish featuring", "mouthwatering", "mouth-watering", "tasty", "amazing", "scrumptious",
             "hearty", "spicy", "savory", "crispy", "juicy", "fluffy", "rich", "succulent",
             "flavorful", "creamy", "zesty", "heavenly"
         ];

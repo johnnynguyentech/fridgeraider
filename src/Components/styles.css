@@ -98,12 +98,12 @@
     padding: 10px;    
     z-index: 1000; 
     display: flex;
-    align-items: center; /* Ensures items stay aligned */
-    gap: 10px; /* Adds space between elements */
+    align-items: center; 
+    gap: 10px; 
 }
 
 .dropdown {
-    position: relative; /* Needed for absolute positioning of dropdown-menu */
+    position: relative;
 }
 
 .dropdown-toggle {
@@ -125,30 +125,65 @@
 
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%; /* Places dropdown below the button */
-    right: 0; /* Aligns it to the right */
-    background-color: #2e2e2e;
-    border: none;
-    list-style: none;
-    margin-top: 5px;
-    border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #2e2e2e;
+  border: none;
+  list-style: none;
+  margin-top: 5px;
+  max-height: 0; 
+  opacity: 0; 
+  overflow: hidden; 
+  transition: max-height 0.3s ease, opacity 0.3s ease; 
+}
+
+.dropdown-menu.show {
+  max-height: 500px; 
+  opacity: 1; 
 }
 
 .dropdown-menu li {
-    cursor: pointer;
-    text-align: right;
-    padding: 5px 10px;
-    white-space: nowrap; /* Prevents text wrapping */
-    color: #2e2e2e;
-    background-color: white;
-    font-weight: 600;
-    cursor: pointer;
+  cursor: pointer;
+  text-align: right;
+  padding: 5px 10px;
+  white-space: nowrap;
+  color: #2e2e2e;
+  background-color: white;
+  font-weight: 600;
+  border: 1px solid #b5b5b5;
+  border-bottom: 1px solid #b5b5b5;
+  border-top: none;
 }
 
-.dropdown-menu li:hover{
+.dropdown-menu li:last-child {
+  border-bottom: 1px solid #b5b5b5;
+}
+
+/* Hover effect for list items */
+.dropdown-menu li:hover {
   text-decoration: underline;
 }
+
+/* Button styling */
+.dropdown-toggle {
+  color: white;
+  font-weight: 600;
+  background-color: #2e2e2e;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: none;
+  transition: 0.2s;
+}
+
+/* Button hover effect */
+.dropdown-toggle:hover {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
 
 .SignInButton {
     font-weight: 600;

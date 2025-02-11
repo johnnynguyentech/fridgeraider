@@ -35,10 +35,10 @@ function InputForm() {
             let prompt;
             const ingredientsCopy = [...ingredientArray]; // Make a copy of the array
             if (ingredientsCopy.length === 1) {
-                prompt = `Create a delicious recipe that contains but not limited to ${ingredientsCopy[0]}. Start the response with, "Our FridgeRaider chefs would like to share with you the recipe for". Put the description in a <p> tag and the steps in a <ol> and <li> tag. End with "Enjoy!" wrapped in a <p> tag.`;
+                prompt = `Create a delicious recipe that contains but not limited to ${ingredientsCopy[0]}. Start the response with, "Our FridgeRaider chefs would like to share with you the recipe for". Put the description in a <p> tag and the steps in a <ol> and <li> tag. End with "Enjoy!🧑‍🍳" wrapped in a <p> tag.`;
             } else {
                 const lastIngredient = ingredientsCopy.pop();
-                prompt = `Create a delicious recipe that contains but not limited to ${ingredientsCopy.join(', ')}, and ${lastIngredient}.  Start the response with, "Our FridgeRaider chefs would like to share with you the recipe for". Put the description in a <p> tag and the steps in a <ol> and <li> tag. End with "Enjoy!" wrapped in a <p> tag.`;
+                prompt = `Create a delicious recipe that contains but not limited to ${ingredientsCopy.join(', ')}, and ${lastIngredient}.  Start the response with, "Our FridgeRaider chefs would like to share with you the recipe for". Put the description in a <p> tag and the steps in a <ol> and <li> tag. End with "Enjoy!🧑‍🍳" wrapped in a <p> tag.`;
             }
             setRecipeStatus("loading");
             handleSend(prompt);

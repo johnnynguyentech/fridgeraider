@@ -13,6 +13,7 @@ function Recipe() {
     const { user, signInWithGoogle } = useAuth();
 
     const [isSaved, setIsSaved] = useState(false);
+    const [recipeToSave, setRecipeToSave] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -29,6 +30,8 @@ function Recipe() {
 
     const handleSaveOrRemoveRecipe = async () => {
         if (!user) {
+            // Store the recipe to save for when the user logs in
+            setRecipeToSave(finalRecipe);
             signInWithGoogle();
             return;
         }
@@ -40,6 +43,17 @@ function Recipe() {
         }
         setIsSaved(!isSaved);
     };
+
+    useEffect(() => {
+        if (user && recipeToSave) {
+            // Save the recipe after the user logs in
+            saveRecipe(user.uid, recipeToSave).then(() => {
+                setIsSaved(true); // Update the button state to show as saved
+                setRecipeToSave(null); // Clear the saved recipe to avoid resaving
+            });
+        }
+    }, [user, recipeToSave]); // This effect will run once the user logs in
+    
 
     const handleStartOver = () => {
         setRecipeStatus("progress");
@@ -75,7 +89,7 @@ function Recipe() {
                     }}
                     onClick={handleSaveOrRemoveRecipe}
                 >
-                    {isSaved ? "Saved ✅" : "Save Recipe"}  {/* Update button text based on isSaved */}
+                    {isSaved ? "Saved ✅" : "Save Recipe"} 
                 </Button>
                 <Button
                     fullWidth
@@ -103,4 +117,3 @@ function Recipe() {
 }
 
 export default Recipe;
-
