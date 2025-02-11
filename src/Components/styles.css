@@ -1,4 +1,4 @@
-/* src/Loading.css */
+
 
 .loading-widget {
     display: flex;
@@ -41,7 +41,6 @@
     justify-content: space-between;
     padding: 2px 10px;
   }
-
   
 .deleteIngredientButton {
     flex-shrink: 0;
@@ -77,7 +76,78 @@
     color: #454444;
   }
 
+  .Menu {
+    position: fixed; 
+    top: 0;         
+    right: 0;         
+    padding: 10px;    
+    z-index: 1000; 
+    display: flex;
+    align-items: center; /* Ensures items stay aligned */
+    gap: 10px; /* Adds space between elements */
+}
+
+.dropdown {
+    position: relative; /* Needed for absolute positioning of dropdown-menu */
+}
+
+.dropdown-toggle {
+    color: white;
+    font-weight: 600;
+    background-color: #2e2e2e;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Places dropdown below the button */
+    right: 0; /* Aligns it to the right */
+    background-color: #2e2e2e;
+    border: none;
+    list-style: none;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+    text-align: right;
+    padding: 5px 10px;
+    white-space: nowrap; /* Prevents text wrapping */
+    color: #2e2e2e;
+    background-color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover{
+  text-decoration: underline;
+}
+
+.SignInButton {
+    font-weight: 600;
+    color: white;
+    /* background-color: #2e2e2e; */
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: none;
+}
+
+
   @media (max-width: 768px) {
+    .HeadingContainer{
+      margin-top: 44px;
+      text-align: left;
+    }
+    .HeadingContainer p {
+      font-size: 14px;
+    }
     .IngredientItems{
       padding: 10px;
     }

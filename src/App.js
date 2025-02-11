@@ -7,6 +7,8 @@ import { RecipeStatusProvider, useRecipeStatus } from './Contexts/RecipeStatus';
 import Recipe from './Components/Recipe';
 import Loading from './Components/Loading';
 import { FinalRecipeProvider } from './Contexts/FinalRecipe';
+import Menu from './Components/Menu';
+import { AuthProvider } from './Contexts/AuthContext';
 
 function Content() {
   const { recipeStatus } = useRecipeStatus();
@@ -24,6 +26,7 @@ function Content() {
 
   return (
     <Container maxWidth="sm" style={{ flex: 1, marginTop: "24px" }}>
+      <Menu />
       <div className="HeadingContainer">
         <h1 className='rubik-dirt-regular'>FridgeRaider</h1>
         <Typography variant="body1" sx={{ color: "primary.main" }}>Tell us what's in your fridge. We'll come up with the recipe.</Typography>
@@ -35,15 +38,17 @@ function Content() {
 
 function App() {
   return (
-    <RecipeStatusProvider>
-      <IngredientProvider>
-        <FinalRecipeProvider>
-            <div className="App">
-              <Content />
-            </div>
-        </FinalRecipeProvider>
-      </IngredientProvider>
-    </RecipeStatusProvider>
+      <RecipeStatusProvider>
+        <IngredientProvider>
+          <FinalRecipeProvider>
+            <AuthProvider>
+              <div className="App">
+                <Content />
+              </div>
+            </AuthProvider>
+          </FinalRecipeProvider>
+        </IngredientProvider>
+      </RecipeStatusProvider>
   );
 }
 

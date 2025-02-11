@@ -44,13 +44,16 @@ function InputComponent() {
         id="fullWidth" 
         sx={{ 
           bgcolor: 'white',
-          border: '1px solid white',
           borderRadius: '4px 0 0 4px',
-          '& fieldset': { borderRight: 'none' }, 
-          height: '54px',
+          '& fieldset': { border: 'none' },  // Remove default border
+          height: '56px',  // Match button height
           flexGrow: 1,
           '& .MuiInputBase-root': {
-            height: '54px', // Make the input area match the height
+            height: '56px', // Ensure consistent height
+            alignItems: 'center', // Center text vertically
+          },
+          '& .MuiInputBase-input': {
+            padding: '16.5px 14px' // Adjust padding to center text
           }
         }} 
         value={inputValue} 
@@ -66,15 +69,17 @@ function InputComponent() {
           backgroundColor: '#2e2e2e',
           border: '1px solid white',
           borderRadius: '0 4px 4px 0', 
-          height: '56px', 
+          height: '56px',  // Match text field height
           fontWeight: '600',
+          padding: '0 16px', // Ensure padding is consistent
           '&:hover': {
             backgroundColor: '#3d3d3d',
-        }
+          }
         }}
       >
         Add
       </Button>
+
     </Box>
   );
 }
