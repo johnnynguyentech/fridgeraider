@@ -1,68 +1,3 @@
-// import './App.css';
-// import React from 'react';
-// import { Container, Typography } from '@mui/material';
-// import InputForm from './Components/InputForm';
-// import { IngredientProvider } from './Contexts/IngredientContext';
-// import { RecipeStatusProvider, useRecipeStatus } from './Contexts/RecipeStatus';
-// import Recipe from './Components/Recipe';
-// import Loading from './Components/Loading';
-// import { FinalRecipeProvider } from './Contexts/FinalRecipe';
-// import Menu from './Components/Menu';
-// import { AuthProvider } from './Contexts/AuthContext';
-
-// function Content() {
-//   const { recipeStatus } = useRecipeStatus();
-
-//   let pageContent;
-//   if (recipeStatus === 'progress') {
-//     pageContent = <InputForm />;
-//   } else if (recipeStatus === 'loading') {
-//     pageContent = <Loading/>
-//   } else if (recipeStatus === 'complete') {
-//     pageContent = <Recipe />;
-//   } else {
-//     pageContent = <h2>Sorry, we've run into an issue.</h2>;
-//   }
-
-//   return (
-//     <Container
-//       maxWidth="sm"
-//       style={{
-//         flex: 1,
-//         marginTop: "24px", // Default margin for larger screens
-//         '@media (max-width: 600px)': {
-//           marginTop: "16px", // Adjust margin for smaller screens
-//         }
-//       }}
-//     >
-//       <div className="HeadingContainer">
-//         <h1 className='rubik-dirt-regular'>FridgeRaider</h1>
-//         <Typography variant="body1" sx={{ color: "primary.main", fontWeight: '600' }}>Tell us what's in your fridge. We'll come up with the recipe.</Typography>
-//       </div>
-//       {pageContent}
-//     </Container>
-//   );
-// }
-
-// function App() {
-//   return (
-//       <RecipeStatusProvider>
-//         <IngredientProvider>
-//           <FinalRecipeProvider>
-//             <AuthProvider>
-//               <div className="App">
-//                 <Menu />
-//                 <Content />
-//               </div>
-//             </AuthProvider>
-//           </FinalRecipeProvider>
-//         </IngredientProvider>
-//       </RecipeStatusProvider>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Container, Typography } from '@mui/material';
@@ -138,13 +73,18 @@ function App() {
     if (isKeyboardOpen) {
       // Prevent body from scrolling when keyboard is open
       document.body.style.height = `${height}px`;
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'; // Disable scrolling when keyboard is open
     } else {
       // Allow scrolling when keyboard is closed
       document.body.style.height = 'auto';
       document.body.style.overflow = 'auto';
     }
   }, [height, isKeyboardOpen]);
+
+  useEffect(() => {
+    // Ensure that the page is always at the top when the app initially loads
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <RecipeStatusProvider>
