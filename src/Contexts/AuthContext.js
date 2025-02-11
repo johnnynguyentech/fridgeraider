@@ -4,16 +4,7 @@ import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signO
 import { useRecipeStatus } from "./RecipeStatus";
 import { useIngredientContext } from './IngredientContext';
 
-// Firebase configuration
-// const firebaseConfig = {
-//     apiKey: "AIzaSyA79zL44p6MhrQdoQu7EQMLB_a6oCgDapc",
-//     authDomain: "fridge-raider.firebaseapp.com",
-//     projectId: "fridge-raider",
-//     storageBucket: "fridge-raider.firebasestorage.app",
-//     messagingSenderId: "868922017790",
-//     appId: "1:868922017790:web:c4ee9cee12d1def02a22af",
-//     measurementId: "G-RWHSB098BS"
-// };
+
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
