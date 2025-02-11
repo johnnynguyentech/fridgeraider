@@ -78,7 +78,7 @@
   }
 
   .recipe-steps ol li{
-    margin: 12px 0;
+    margin: 12px 0 12px 12px;
     font-weight: 500;
     text-align: left;
   }
@@ -115,7 +115,14 @@
     padding: 5px 10px;
     border-radius: 4px;
     background: none;
+    transition: 0.2s;
 }
+
+.dropdown-toggle:hover{
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
 
 .dropdown-menu {
     position: absolute;
@@ -152,7 +159,7 @@
     padding: 5px 10px;
     cursor: pointer;
     background: none;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .SignInButton:hover{
