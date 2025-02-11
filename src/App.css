@@ -52,7 +52,7 @@ html, body {
 }
 
 body{
-  background-image: linear-gradient(to bottom right, #000000, #707070);
+  background-image: linear-gradient(#000000, #707070);
 }
 
 
@@ -67,6 +67,6 @@ body{
 
 @media (max-width: 768px) {
   .rubik-dirt-regular {
-    font-size: 42px;
+    font-size: 46px;
   }
 }

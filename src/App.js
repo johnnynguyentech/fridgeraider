@@ -29,7 +29,7 @@ function Content() {
       <Menu />
       <div className="HeadingContainer">
         <h1 className='rubik-dirt-regular'>FridgeRaider</h1>
-        <Typography variant="body1" sx={{ color: "primary.main" }}>Tell us what's in your fridge. We'll come up with the recipe.</Typography>
+        <Typography variant="body1" sx={{ color: "primary.main", fontWeight: '600' }}>Tell us what's in your fridge. We'll come up with the recipe.</Typography>
       </div>
       {pageContent}
     </Container>

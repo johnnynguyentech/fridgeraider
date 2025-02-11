@@ -44,7 +44,7 @@ function InputComponent() {
         id="fullWidth" 
         sx={{ 
           bgcolor: 'white',
-          borderRadius: '4px 0 0 4px',
+          // borderRadius: '4px 0 0 4px',
           '& fieldset': { border: 'none' },  // Remove default border
           height: '56px',  // Match button height
           flexGrow: 1,
@@ -67,8 +67,8 @@ function InputComponent() {
         sx={{ 
           color: 'secondary.main', 
           backgroundColor: '#2e2e2e',
-          border: '1px solid white',
-          borderRadius: '0 4px 4px 0', 
+          // border: '1px solid white',
+          borderRadius: '0 4px 0 4px', 
           height: '56px',  // Match text field height
           fontWeight: '600',
           padding: '0 16px', // Ensure padding is consistent

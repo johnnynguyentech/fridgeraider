@@ -24,7 +24,7 @@ function InputForm() {
             <li className="ingredientListItem" key={index}>
                 <span className="ingredientText">{ingredient}</span>
                 <div className="dots"></div>
-                <button className="deleteIngredientButton kalam-bold" onClick={() => handleDeleteIngredient(index)}>X</button>
+                <button className="deleteIngredientButton recipe-font" onClick={() => handleDeleteIngredient(index)}>X</button>
             </li>
         ));
         setIngredientItems(items);
@@ -104,9 +104,9 @@ function InputForm() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
           } }} className="InputForm">
-            <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto' }}>
-                <h3 className='kalam-bold' style={{textDecoration: "underline", margin: "0", color:"#454444"}}>INGREDIENTS</h3>
-                <ul className="IngredientsList kalam-bold">
+            <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', borderRadius: "0", margin: "15px 0" }}>
+                <h3 className='recipe-font' style={{textDecoration: "underline", margin: "0", color:"#454444", paddingBottom: "12px"}}>INGREDIENTS</h3>
+                <ul className="IngredientsList recipe-font">
                     {ingredientItems}
                 </ul>
             </div>
@@ -121,7 +121,8 @@ function InputForm() {
                     sx={{
                         color: 'secondary.main',
                         backgroundColor: '#2e2e2e',
-                        border: '1px solid white',
+                        // border: '1px solid white',
+                        borderRadius: 0,
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',

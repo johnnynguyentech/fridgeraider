@@ -29,9 +29,9 @@ function Recipe() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
           } }} className="InputForm">
-            <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '44px' }}>
-                <h3 className='kalam-bold' style={{textDecoration: "underline", margin: "0", color: "#454444"}}>THE ULTIMATE DISH</h3>
-                <div className="kalam-bold" dangerouslySetInnerHTML={{ __html: finalRecipe }} />
+            <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '44px', borderRadius: "0", margin: "15px 0" }}>
+                <h3 className='recipe-heading recipe-font'>THE ULTIMATE DISH</h3>
+                <div className='recipe-steps recipe-font' dangerouslySetInnerHTML={{ __html: finalRecipe }} />
             </div>
             <div className="RestartContainer" style={{ borderTop: '1px solid #ddd' }}>
                 {/* <Button
@@ -41,7 +41,7 @@ function Recipe() {
                     sx={{
                         color: '#2e2e2e',
                         backgroundColor: 'white',
-                        border: '1px solid white',
+                        borderRadius: 0,
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',
@@ -61,7 +61,8 @@ function Recipe() {
                     sx={{
                         color: 'secondary.main',
                         backgroundColor: '#2e2e2e',
-                        border: '1px solid white',
+                        borderRadius: 0,
+                        // border: '1px solid white',
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',
