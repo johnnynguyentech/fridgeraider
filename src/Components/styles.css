@@ -91,7 +91,7 @@
     color: #454444;
   }
 
-  .Menu {
+  /* .Menu {
     position: fixed; 
     top: 0;         
     right: 0;         
@@ -100,6 +100,22 @@
     display: flex;
     align-items: center; 
     gap: 10px; 
+  } */
+
+  .HeadingContainer{
+    margin-top: 24px;
+  }
+
+
+  .Menu {
+    position: absolute; 
+    top: 0;            
+    right: 0;          
+    padding: 10px;    
+    z-index: 1000;    
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .dropdown {
@@ -206,7 +222,6 @@
 
   @media (max-width: 768px) {
     .HeadingContainer{
-      margin-top: 44px;
       text-align: left;
     }
     .HeadingContainer p {
@@ -217,5 +232,8 @@
     }
     .RecipeContainer{
       padding: 10px;
+    }
+    .Menu{
+      padding: 5px;
     }
   }
