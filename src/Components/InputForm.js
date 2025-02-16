@@ -106,7 +106,7 @@ function InputForm() {
           } }} className="InputForm">
             <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', borderRadius: "0", margin: "15px 0" }}>
             <h3 className='recipe-font' style={{ margin: "0", paddingBottom: "12px", fontWeight: "600", textDecoration: ingredientArray.length === 0 ? "none" : "underline" }}>
-                {ingredientArray.length === 0 ? "What's in your fridge?" : "Ingredients"}
+                {ingredientArray.length === 0 ? "" : "Ingredients"}
             </h3>
                 <ul className="IngredientsList recipe-font">
                     {ingredientItems}
@@ -122,7 +122,8 @@ function InputForm() {
                     size="large"
                     sx={{
                         color: 'secondary.main',
-                        backgroundColor: '#2e2e2e',
+                        // backgroundColor: '#2e2e2e',
+                        backgroundColor: '#757575',
                         // border: '1px solid white',
                         borderRadius: 0,
                         height: '56px',

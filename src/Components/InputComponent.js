@@ -67,8 +67,9 @@ function InputComponent() {
         sx={{ 
           color: 'secondary.main', 
           backgroundColor: '#2e2e2e',
+          backgroundColor: '#757575',
           // border: '1px solid white',
-          borderRadius: '0 4px 0 4px', 
+          borderRadius: '0', 
           height: '56px',  // Match text field height
           fontWeight: '600',
           padding: '0 16px', // Ensure padding is consistent

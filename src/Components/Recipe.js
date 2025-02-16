@@ -97,7 +97,7 @@ function Recipe() {
                     size="large"
                     sx={{
                         color: 'secondary.main',
-                        backgroundColor: '#2e2e2e',
+                        backgroundColor: '#757575',
                         borderRadius: 0,
                         height: '56px',
                         fontSize: '22px',
