@@ -46,7 +46,7 @@ function Menu() {
                         className="dropdown-toggle" 
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
-                        Saved Recipes ▼
+                        saved recipes ▼
                     </button>
                     <ul 
                         className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
@@ -58,13 +58,13 @@ function Menu() {
                                 </li>
                             ))
                         ) : (
-                            <li>No saved recipes</li>
+                            <li>no saved recipes</li>
                         )}
                     </ul>
                 </div>
             )}
             <button className="SignInButton" onClick={user ? signOutUser : signInWithGoogle}>
-                {user ? "Sign Out" : "Sign In"}
+                {user ? "sign out" : "sign in"}
             </button>
         </div>
     );

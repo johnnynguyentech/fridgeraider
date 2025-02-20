@@ -104,9 +104,9 @@ function InputForm() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
           } }} className="InputForm">
-            <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', borderRadius: "0", margin: "15px 0" }}>
-            <h3 className='recipe-font' style={{ margin: "0", paddingBottom: "12px", fontWeight: "600", textDecoration: ingredientArray.length === 0 ? "none" : "underline" }}>
-                {ingredientArray.length === 0 ? "" : "Ingredients"}
+            <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', borderRadius: "5px", margin: "15px 0" }}>
+            <h3 className='recipe-font' style={{ margin: "0", padding: "10px 10px 20px 10px", fontWeight: "600"}}>
+                 what's in your fridge?
             </h3>
                 <ul className="IngredientsList recipe-font">
                     {ingredientItems}
@@ -125,11 +125,12 @@ function InputForm() {
                         // backgroundColor: '#2e2e2e',
                         backgroundColor: '#757575',
                         // border: '1px solid white',
-                        borderRadius: 0,
+                        borderRadius: "5px",
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',
-                        mt: 1,
+                        textTransform: "lowercase",
+                        mt: 1.5,
                         '&:hover': {
                             backgroundColor: '#3d3d3d',
                         }

@@ -65,8 +65,8 @@ function Recipe() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
         } }} className="InputForm">
-            <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '44px', borderRadius: "0", margin: "15px 0" }}>
-                <h3 className='recipe-heading recipe-font'>THE ULTIMATE DISH</h3>
+            <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '44px', borderRadius: "5px", margin: "15px 0" }}>
+                {/* <h3 className='recipe-heading recipe-font'>THE ULTIMATE DISH</h3> */}
                 {/* Render the recipe content correctly */}
                 <div className='recipe-steps recipe-font' dangerouslySetInnerHTML={{ __html: finalRecipe }} />
             </div>
@@ -78,10 +78,11 @@ function Recipe() {
                     sx={{
                         color: '#2e2e2e',
                         backgroundColor: 'white',
-                        borderRadius: 0,
+                        borderRadius: "5px",
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',
+                        textTransform: "lowercase",
                         mt: 2,
                         '&:hover': {
                             backgroundColor: '#cfcfcf',
@@ -98,10 +99,11 @@ function Recipe() {
                     sx={{
                         color: 'secondary.main',
                         backgroundColor: '#757575',
-                        borderRadius: 0,
+                        borderRadius: "5px",
                         height: '56px',
                         fontSize: '22px',
                         fontWeight: '700',
+                        textTransform: "lowercase",
                         mt: 1,
                         '&:hover': {
                             backgroundColor: '#3d3d3d',

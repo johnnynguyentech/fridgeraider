@@ -37,27 +37,61 @@ function InputComponent() {
         zIndex: 1000 // Ensure the component stays on top of other content
       }}
     >
-      <TextField 
+      {/* <TextField 
         fullWidth 
         autoComplete="off"
         label="List an ingredient" 
         id="fullWidth" 
         sx={{ 
           bgcolor: 'white',
-          // borderRadius: '4px 0 0 4px',
+          borderRadius: '5px 0 0 5px',
           '& fieldset': { border: 'none' },  // Remove default border
-          height: '56px',  // Match button height
+          height: '36px',  // Match button height
           flexGrow: 1,
           '& .MuiInputBase-root': {
-            height: '56px', // Ensure consistent height
+            height: '36px', // Ensure consistent height
             alignItems: 'center', // Center text vertically
           },
           '& .MuiInputBase-input': {
-            padding: '16.5px 14px' // Adjust padding to center text
+            padding: '0px 14px' // Adjust padding to center text
           }
         }} 
         value={inputValue} 
         onChange={handleInputChange} 
+        onKeyPress={handleKeyPress}
+      /> */}
+      <TextField
+        fullWidth
+        autoComplete="off"
+        label="list an ingredient"
+        id="fullWidth"
+        sx={{ 
+          bgcolor: 'white',
+          borderRadius: '5px 0 0 5px',
+          '& fieldset': { border: 'none' }, // Remove default border
+          height: '44px', // Match button height
+          flexGrow: 1,
+          '& .MuiInputBase-root': {
+            height: '44px', // Ensure consistent height
+            alignItems: 'center',
+          },
+          '& .MuiInputBase-input': {
+            padding: '0px 14px',
+          }
+        }}
+        InputLabelProps={{
+          shrink: false, // Prevents automatic floating
+          sx: {
+            top: '50%', // Vertically center the label
+            transform: 'translateY(-50%)', // Keep it aligned properly
+            transition: 'opacity 0.2s ease-in-out, top 0.2s ease-in-out',
+            opacity: inputValue ? 0 : 1, // Hide when typing
+            pointerEvents: inputValue ? 'none' : 'auto', // Prevents interaction when hidden
+            paddingLeft: "13px",
+          }
+        }}
+        value={inputValue}
+        onChange={handleInputChange}
         onKeyPress={handleKeyPress}
       />
       <Button 
@@ -66,11 +100,11 @@ function InputComponent() {
         onClick={handleAddClick}
         sx={{ 
           color: 'secondary.main', 
-          backgroundColor: '#2e2e2e',
           backgroundColor: '#757575',
           // border: '1px solid white',
-          borderRadius: '0', 
-          height: '56px',  // Match text field height
+          borderRadius: '0 5px 5px 0', 
+          textTransform: "lowercase",
+          height: '44px',  // Match text field height
           fontWeight: '600',
           padding: '0 16px', // Ensure padding is consistent
           '&:hover': {
