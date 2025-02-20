@@ -108,7 +108,7 @@ function InputComponent() {
           fontWeight: '600',
           padding: '0 16px', // Ensure padding is consistent
           '&:hover': {
-            backgroundColor: '#3d3d3d',
+            backgroundColor: '#ebb434',
           }
         }}
       >

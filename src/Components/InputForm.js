@@ -132,7 +132,7 @@ function InputForm() {
                         textTransform: "lowercase",
                         mt: 1.5,
                         '&:hover': {
-                            backgroundColor: '#3d3d3d',
+                            backgroundColor: '#ebb434',
                         }
                     }}
                     onClick={handleGenerate}

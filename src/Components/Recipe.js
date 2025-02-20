@@ -106,7 +106,7 @@ function Recipe() {
                         textTransform: "lowercase",
                         mt: 1,
                         '&:hover': {
-                            backgroundColor: '#3d3d3d',
+                            backgroundColor: '#ebb434',
                         }
                     }}
                     onClick={handleStartOver}
