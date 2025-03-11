@@ -65,23 +65,22 @@ function Recipe() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
         } }} className="InputForm">
-            <div className="RecipeContainer" style={{ flex: '1', overflowY: 'auto', padding: '44px', borderRadius: "5px", margin: "15px 0" }}>
-                {/* <h3 className='recipe-heading recipe-font'>THE ULTIMATE DISH</h3> */}
-                {/* Render the recipe content correctly */}
-                <div className='recipe-steps recipe-font' dangerouslySetInnerHTML={{ __html: finalRecipe }} />
+            <div className="RecipeContainer poppins-regular" style={{ flex: '1', overflowY: 'auto', padding: '24px 36px', borderRadius: "5px", margin: "15px 0" }}>
+                <div className='recipe-steps poppins-regular' dangerouslySetInnerHTML={{ __html: finalRecipe }} />
             </div>
             <div className="RestartContainer" style={{ borderTop: '1px solid #ddd' }}>
                 <Button
                     fullWidth
+                    className="poppins-regular"
                     variant="contained"
                     size="large"
                     sx={{
                         color: '#2e2e2e',
                         backgroundColor: 'white',
                         borderRadius: "5px",
-                        height: '56px',
-                        fontSize: '22px',
-                        fontWeight: '700',
+                        height: '44px',
+                        fontSize: '16px',
+                        fontWeight: '500',
                         textTransform: "lowercase",
                         mt: 2,
                         '&:hover': {
@@ -94,19 +93,20 @@ function Recipe() {
                 </Button>
                 <Button
                     fullWidth
+                    className="poppins-regular"
                     variant="contained"
                     size="large"
                     sx={{
-                        color: 'secondary.main',
-                        backgroundColor: '#757575',
+                        color: 'black',
+                        backgroundColor: '#EBB434',
                         borderRadius: "5px",
-                        height: '56px',
-                        fontSize: '22px',
-                        fontWeight: '700',
+                        height: '44px',
+                        fontSize: '16px',
+                        fontWeight: '500',
                         textTransform: "lowercase",
                         mt: 1,
                         '&:hover': {
-                            backgroundColor: '#ebb434',
+                            backgroundColor: '#c7982c',
                         }
                     }}
                     onClick={handleStartOver}

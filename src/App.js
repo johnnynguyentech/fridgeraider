@@ -35,7 +35,7 @@ const Content = () => {
     >
       <div className="HeadingContainer">
         <h1 className='rubik-dirt-regular'>FridgeRaider</h1>
-        <Typography variant="body1" sx={{ color: "primary.main", fontWeight: '600', letterSpacing: '0.5px' }}>tell us what's in your fridge. we'll come up with the recipe.</Typography>
+        {/* <Typography variant="body1" sx={{ color: "primary.main", fontWeight: '600', letterSpacing: '0.5px' }}>tell us what's in your fridge. we'll come up with the recipe.</Typography> */}
       </div>
       {pageContent}
     </Container>

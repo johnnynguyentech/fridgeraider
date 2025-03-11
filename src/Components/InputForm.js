@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState, useRef } from 'react';
 import InputComponent from './InputComponent';
 import { Box, Button } from '@mui/material';
 import { useIngredientContext } from '../Contexts/IngredientContext';
@@ -13,6 +14,9 @@ function InputForm() {
     const { setFinalRecipe } = useFinalRecipe();
     const [ingredientItems, setIngredientItems] = useState([]);
     const [messages, setMessages] = useState([]);
+    
+    // Reference for IngredientViewport
+    const ingredientViewportRef = useRef(null);
 
     const handleDeleteIngredient = (index) => {
         const newIngredientArray = ingredientArray.filter((_, i) => i !== index);
@@ -21,14 +25,21 @@ function InputForm() {
 
     useEffect(() => {
         const items = ingredientArray.map((ingredient, index) => (
-            <li className="ingredientListItem" key={index}>
+            <li className="ingredientListItem poppins-regular" key={index}>
                 <span className="ingredientText">{ingredient}</span>
                 <div className="dots"></div>
-                <button className="deleteIngredientButton recipe-font" onClick={() => handleDeleteIngredient(index)}>ⓧ</button>
+                <button className="deleteIngredientButton poppins-regular" onClick={() => handleDeleteIngredient(index)}>ⓧ</button>
             </li>
         ));
         setIngredientItems(items);
     }, [ingredientArray]);
+
+    // Scroll to bottom when ingredientItems change
+    useEffect(() => {
+        if (ingredientViewportRef.current) {
+            ingredientViewportRef.current.scrollTop = ingredientViewportRef.current.scrollHeight;
+        }
+    }, [ingredientItems]);
 
     const handleGenerate = () => {
         if (ingredientArray.length > 0) {
@@ -104,42 +115,44 @@ function InputForm() {
             xs: '70vh', // mobile
             md: '80vh'  // desktop
           } }} className="InputForm">
-            <div className="IngredientItems" style={{ flex: '1', overflowY: 'auto', borderRadius: "5px", margin: "15px 0" }}>
-            <h3 className='recipe-font' style={{ margin: "0", padding: "10px 10px 20px 10px", fontWeight: "600"}}>
-                 what's in your fridge?
-            </h3>
-                <ul className="IngredientsList recipe-font">
-                    {ingredientItems}
-                </ul>
-            </div>
-            <div className="InputContainer" style={{ borderTop: '1px solid #ddd' }}>
-                <InputComponent />
-                <Button
-                    className="rubik-dirt-regular"
-                    id="GenerateRecipeButton"
-                    fullWidth
-                    variant="contained"
-                    size="large"
-                    sx={{
-                        color: 'secondary.main',
-                        // backgroundColor: '#2e2e2e',
-                        backgroundColor: '#757575',
-                        // border: '1px solid white',
-                        borderRadius: "5px",
-                        height: '56px',
-                        fontSize: '22px',
-                        fontWeight: '700',
-                        textTransform: "lowercase",
-                        mt: 1.5,
-                        '&:hover': {
-                            backgroundColor: '#ebb434',
-                        }
-                    }}
-                    onClick={handleGenerate}
-                >
-                    GENERATE RECIPE
-                </Button>
-
+            <div className="IngredientItems" style={{ flex: '1', display: 'flex', flexDirection: 'column', overflowY: 'auto', borderRadius: "5px", margin: "15px 0" }}>
+                <h3 className='poppins-bold' style={{ margin: "0", padding: "10px 10px 20px 10px", fontWeight: "500", color: "white" }}>
+                    Tell us what's in your fridge. We'll come up with the recipe.
+                </h3>
+                <hr />
+                <br />
+                <div className='IngredientViewport' ref={ingredientViewportRef} style={{ flex: '1', maxHeight: 'calc(100% - 280px)', overflowY: 'auto' }}>
+                    <ul className="IngredientsList recipe-font">
+                        {ingredientItems}
+                    </ul>
+                </div>
+                <div className="InputContainer" style={{ borderTop: '1px solid #ddd' }}>
+                    <p className="poppins-regular" style={{ color: "white", marginTop: "12px", textAlign: "left", fontSize: "14px" }}><i class="fa-regular fa-file-lines"></i>List an ingredient</p>
+                    <InputComponent />
+                    <Button
+                        className="poppins-regular"
+                        id="GenerateRecipeButton"
+                        fullWidth
+                        variant="contained"
+                        size="large"
+                        sx={{
+                            color: 'black',
+                            backgroundColor: '#EBB434;',
+                            borderRadius: "5px",
+                            height: '44px',
+                            fontSize: '16px',
+                            fontWeight: '500',
+                            textTransform: "none",
+                            mt: 1.5,
+                            '&:hover': {
+                                backgroundColor: '#c7982c',
+                            }
+                        }}
+                        onClick={handleGenerate}
+                    >
+                        <i class="fa fa-utensils"></i> Generate Recipe
+                    </Button>
+                </div>
             </div>
         </Box>
     );

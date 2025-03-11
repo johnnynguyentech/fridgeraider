@@ -31,43 +31,22 @@ function InputComponent() {
         display: 'flex',
         alignItems: 'center',
         marginTop: '12px',
-        backgroundColor: '#2e2d2d',
         position: 'sticky',
         bottom: 0,
+        gap: "8px",
         zIndex: 1000 // Ensure the component stays on top of other content
       }}
     >
-      {/* <TextField 
-        fullWidth 
-        autoComplete="off"
-        label="List an ingredient" 
-        id="fullWidth" 
-        sx={{ 
-          bgcolor: 'white',
-          borderRadius: '5px 0 0 5px',
-          '& fieldset': { border: 'none' },  // Remove default border
-          height: '36px',  // Match button height
-          flexGrow: 1,
-          '& .MuiInputBase-root': {
-            height: '36px', // Ensure consistent height
-            alignItems: 'center', // Center text vertically
-          },
-          '& .MuiInputBase-input': {
-            padding: '0px 14px' // Adjust padding to center text
-          }
-        }} 
-        value={inputValue} 
-        onChange={handleInputChange} 
-        onKeyPress={handleKeyPress}
-      /> */}
       <TextField
         fullWidth
         autoComplete="off"
-        label="list an ingredient"
+        label="Enter ingredients here..."
         id="fullWidth"
+        className="poppins-regular"
         sx={{ 
+          fontFamily: 'Poppins, sans-serif',
           bgcolor: 'white',
-          borderRadius: '5px 0 0 5px',
+          borderRadius: '5px',
           '& fieldset': { border: 'none' }, // Remove default border
           height: '44px', // Match button height
           flexGrow: 1,
@@ -82,12 +61,14 @@ function InputComponent() {
         InputLabelProps={{
           shrink: false, // Prevents automatic floating
           sx: {
+            fontFamily: 'Poppins, sans-serif',
             top: '50%', // Vertically center the label
             transform: 'translateY(-50%)', // Keep it aligned properly
             transition: 'opacity 0.2s ease-in-out, top 0.2s ease-in-out',
             opacity: inputValue ? 0 : 1, // Hide when typing
             pointerEvents: inputValue ? 'none' : 'auto', // Prevents interaction when hidden
             paddingLeft: "13px",
+            fontSize: "14px"
           }
         }}
         value={inputValue}
@@ -95,20 +76,21 @@ function InputComponent() {
         onKeyPress={handleKeyPress}
       />
       <Button 
+        className="poppins-regular"
         variant="contained" 
         size="large" 
         onClick={handleAddClick}
         sx={{ 
-          color: 'secondary.main', 
-          backgroundColor: '#757575',
-          // border: '1px solid white',
-          borderRadius: '0 5px 5px 0', 
-          textTransform: "lowercase",
+          color: 'white', 
+          backgroundColor: 'black',
+          borderRadius: '5px', 
+          textTransform: "none",
           height: '44px',  // Match text field height
-          fontWeight: '600',
+          fontWeight: '500',
+          fontSize: "14px",
           padding: '0 16px', // Ensure padding is consistent
           '&:hover': {
-            backgroundColor: '#ebb434',
+            backgroundColor: '#757575',
           }
         }}
       >

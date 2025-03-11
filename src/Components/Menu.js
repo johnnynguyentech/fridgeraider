@@ -41,30 +41,30 @@ function Menu() {
     return (
         <div className="Menu">
             {user && (
-                <div className="dropdown">
+                <div className="dropdown poppins-regular">
                     <button 
-                        className="dropdown-toggle" 
+                        className="dropdown-toggle poppins-regular" 
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
-                        saved recipes ▼
+                        <i class="fa-solid fa-chevron-down"></i> Saved Recipes
                     </button>
                     <ul 
                         className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}
                     >
                         {savedRecipes.length > 0 ? (
                             savedRecipes.map((recipe) => (
-                                <li key={recipe.recipeId} onClick={() => handleRecipeClick(recipe)}>
+                                <li className="poppins-regular" key={recipe.recipeId} onClick={() => handleRecipeClick(recipe)}>
                                     {recipe.title.length > 30 ? `${recipe.title.slice(0, 30)}...` : recipe.title}
                                 </li>
                             ))
                         ) : (
-                            <li>no saved recipes</li>
+                            <li>No saved recipes</li>
                         )}
                     </ul>
                 </div>
             )}
-            <button className="SignInButton" onClick={user ? signOutUser : signInWithGoogle}>
-                {user ? "sign out" : "sign in"}
+            <button className="SignInButton poppins-regular" onClick={user ? signOutUser : signInWithGoogle}>
+                <i class="fa-solid fa-user"></i>{user ? "Sign Out" : "Sign In"}
             </button>
         </div>
     );
