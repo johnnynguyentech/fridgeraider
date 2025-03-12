@@ -82,15 +82,16 @@ function InputComponent() {
         onClick={handleAddClick}
         sx={{ 
           color: 'white', 
-          backgroundColor: 'black',
+          backgroundColor: '#363636',
           borderRadius: '5px', 
+          border: "1px solid white",
           textTransform: "none",
           height: '44px',  // Match text field height
           fontWeight: '500',
           fontSize: "14px",
           padding: '0 16px', // Ensure padding is consistent
           '&:hover': {
-            backgroundColor: '#757575',
+            backgroundColor: 'grey',
           }
         }}
       >

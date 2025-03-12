@@ -178,7 +178,7 @@ i {
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 5px;
-  background: none;
+  background-color: #363636;
   border: 1px solid white;
   font-size: 12px;
   transition: 0.2s;
@@ -197,7 +197,7 @@ i {
     border: 1px solid white;
     padding: 5px 10px;
     cursor: pointer;
-    background: none;
+    background-color: #363636;
     font-size: 12px;
     transition: 0.2s;
 }
