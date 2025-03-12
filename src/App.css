@@ -70,8 +70,14 @@ html, body {
   overflow: hidden;
 }
 
+html{
+  background: linear-gradient(#363636, #121212);
+}
+
 body {
-  background-image: linear-gradient(#363636, #121212);
+  /* background-image: linear-gradient(#363636, #121212) !important; */
+  /* background-color: #363636; */
+  background: transparent;
   margin: 0;
   height: 100vh;
   width: 100vw;
