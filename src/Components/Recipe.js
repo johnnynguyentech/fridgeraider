@@ -81,7 +81,7 @@ function Recipe() {
                         height: '44px',
                         fontSize: '16px',
                         fontWeight: '500',
-                        textTransform: "lowercase",
+                        textTransform: "none",
                         mt: 2,
                         '&:hover': {
                             backgroundColor: '#cfcfcf',
@@ -103,7 +103,7 @@ function Recipe() {
                         height: '44px',
                         fontSize: '16px',
                         fontWeight: '500',
-                        textTransform: "lowercase",
+                        textTransform: "none",
                         mt: 1,
                         '&:hover': {
                             backgroundColor: '#c7982c',
