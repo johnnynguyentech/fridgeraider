@@ -112,16 +112,16 @@ function InputForm() {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', height: {
-            xs: '70vh', // mobile
+            xs: '72vh', // mobile
             md: '80vh'  // desktop
           } }} className="InputForm">
             <div className="IngredientItems" style={{ flex: '1', display: 'flex', flexDirection: 'column', overflowY: 'auto', borderRadius: "5px", margin: "15px 0" }}>
-                <h3 className='poppins-bold' style={{ margin: "0", padding: "10px 10px 20px 10px", fontWeight: "500", color: "white" }}>
+                <h3 className='poppins-regular' style={{ margin: "0", padding: "10px 10px 20px 10px", color: "white", fontSize: "16px" }}>
                     Tell us what's in your fridge. We'll come up with the recipe.
                 </h3>
                 <hr />
                 <br />
-                <div className='IngredientViewport' ref={ingredientViewportRef} style={{ flex: '1', maxHeight: 'calc(100% - 280px)', overflowY: 'auto' }}>
+                <div className='IngredientViewport' ref={ingredientViewportRef} style={{ flex: '1', maxHeight: 'calc(100% - 255px)', overflowY: 'auto' }}>
                     <ul className="IngredientsList recipe-font">
                         {ingredientItems}
                     </ul>
